@@ -1,7 +1,20 @@
-function App () {
+import { useState } from "react";
+import Header from "./components/Header";
+import NotesItem from "./components/NotesItem";
+
+function app () {
+
+    const [note, setNote] = useState()
+ 
+
     return (
-        <h1>oisajc</h1>
+    <>
+        <Header />
+        <div>
+            <NotesItem / >
+        </div>
+    </>    
     )
 }
 
-export default App;
+export default app; 
