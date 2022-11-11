@@ -1,15 +1,11 @@
-import { useState } from "react";
-
-
-function NotesItem() {
-
-    const [priority, setPriority] = useState(69)
-    const [text, setText] = useState("Damn that 69 at 4:20")
-
+function NotesItem( {item , handleDelete}) {
   return (
     <div>
-        <div>{priority}</div> 
-        <div> {text} </div>
+        <div>{item.rating}</div> 
+        <button onClick={() => handleDelete (item.id)}>
+          click
+        </button> 
+        <div> {item.text} </div>
     </div>
   )
 }

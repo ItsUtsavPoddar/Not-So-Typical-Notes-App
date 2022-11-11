@@ -1,20 +1,29 @@
 import { useState } from "react";
 import Header from "./components/Header";
-import NotesItem from "./components/NotesItem";
+import NotesList from "./components/NotesList";
+import NoteData from "./data/NoteData"
 
-function app () {
+function App () {
 
-    const [note, setNote] = useState()
- 
+    const [note, setNote] = useState (NoteData);
+
+    function deleteNote (id) {
+        if (window.confirm("are you sure you want to delete?")){
+       setNote( note.filter((item)=> item.id!== id));
+        }
+    }
 
     return (
     <>
-        <Header />
+        <Header />   
         <div>
-            <NotesItem / >
+            <NotesList 
+                note = {note}
+                handleDelete = {deleteNote}
+                />
         </div>
     </>    
     )
 }
 
-export default app; 
+export default App; 
