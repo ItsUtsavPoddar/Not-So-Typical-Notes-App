@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Header from "./components/Header";
 import NotesList from "./components/NotesList";
+import NotesStats from "./components/NotesStats";
+import NotesForm from "./components/NotesForm";
 import NoteData from "./data/NoteData"
 
 function App () {
@@ -17,6 +19,8 @@ function App () {
     <>
         <Header />   
         <div>
+            <NotesForm />
+            <NotesStats note = {note}/>
             <NotesList 
                 note = {note}
                 handleDelete = {deleteNote}
